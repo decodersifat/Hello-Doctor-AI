@@ -1,0 +1,168 @@
+/* Modern Design for the Login Page */
+* {
+    margin: 0;
+    padding: 0;
+    
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Changed to flex-start to prevent hiding the top content */
+    min-height: 100vh; /* Ensures content height adapts dynamically */
+    padding: 20px; /* Added padding to avoid clipping */
+    color: #ffffff;
+    margin-top: 80px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 7px 20px;
+    width: 100%;
+    margin-bottom: 80px;
+    left: 0;
+    z-index: 1000; /* Ensures it stays above other elements */
+    
+  }
+  
+  .navbar .logo {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo img {
+    width: 50px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    font-weight: bold;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #00d4ff;
+    /* Change color on hover */
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #00d4ff;
+    /* Add underline effect */
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px 35px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    margin-top: 280px; /* Added margin to create space at the top */
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #1a5bbd;
+    transform: translateY(-2px);
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+p a {
+    color: #ff8c42;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #ff5e00;
+    text-decoration: underline;
+}

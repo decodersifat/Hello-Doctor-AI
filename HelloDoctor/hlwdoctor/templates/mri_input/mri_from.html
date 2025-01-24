@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRI Input</title>
+    <link rel="stylesheet" href="{% static 'css/mri_input.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/home/h/#home"> <img src ="{% static 'images/rivers_20241124_193633_0000.png'%}"> </a>
+                Hello Doctor
+            </div>
+            <ul class="nav-links">
+                <li><a href="/home/h/#home">Home</a></li>
+                <li><a href="/home/h/#about">About</a></li>
+                <li><a href="/sl/s/">Service</a></li>
+                <li><a href="/home/h/#contact">Contact</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'register' %}">Sign Up</a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+    </header>
+    <form method="POST" enctype="multipart/form-data" action="{% url 'predict' %}">
+        {% csrf_token %}
+        <label for="image">Upload a .nii file:</label>
+        <br/>
+        <label for="image">Must Be maintain this order: <br/>1.Flair <br/>2.T1ce <br/>3.T2 <br/>4.Mask</label>
+        <input type="file" id="image" name="image" accept=".nii" multiple required>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

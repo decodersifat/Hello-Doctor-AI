@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Model Prediction</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Hello Doctor</title>
+    <style>
+
+        marquee {
+            background-color: #FFEB3B;
+            color: #D32F2F;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+        }
+        .main-container h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .main-container button {
+            padding: 15px 30px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .main-container button:hover {
+            background-color: #45A049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/home/h/#home">
+                    <img src="{% static 'images/rivers_20241124_193633_0000.png' %}" alt="Logo">
+                </a>
+                <span>Hello Doctor</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/home/h/#home">Home</a></li>
+                <li><a href="/home/h/#about">About</a></li>
+                <li><a href="/sl/s/">Service</a></li>
+                <li><a href="/home/h/#contact">Contact</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'register' %}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <div style="margin-top: 70px;">
+        <main>
+            <marquee>Result Can Be Inaccurate, Cause Our System is still under development</marquee>
+            <div class="main-container">
+                {% if pdf_url %}
+                    <h1>Your Report Is Ready to Download</h1>
+                    <a href="/mri/download/MRI_Report.pdf" download>
+                        <button>Download Report</button>
+                    </a>
+                {% endif %}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

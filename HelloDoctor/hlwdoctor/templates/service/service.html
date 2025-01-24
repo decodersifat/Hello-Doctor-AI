@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href = "{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="/home/h/#home"> <img src ="{% static 'images/rivers_20241124_193633_0000.png'%}"> </a>
+                Hello Doctor
+            </div>
+            <ul class="nav-links">
+                <li><a href="/home/h/#home">Home</a></li>
+                <li><a href="/home/h/#about">About</a></li>
+                <li><a href="/sl/s/">Service</a></li>
+                <li><a href="/home/h/#contact">Contact</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'register' %}">Sign Up</a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+    </header>
+    <section id="service">
+        <div class="background">
+            <div class="overlay">
+                <h1 class="title">Our Services</h1>
+                <div class="card1-container">
+                    <div class="card1"><h1>MRI(Magnetic resonance imaging)</h1>Want to see details? Click the button below <br>
+                        <a href="/mri/mri_input/"><button class="readmoreBTM">Read More..</button></a>
+                    </div>
+                    <div class="card1"><h1>X-RAY(X-radiation) <br> <br>Upcoming...</h1></div>
+                    <div class="card1"><h1>ECG(Electrocardiogram) <br> <br>Upcoming...</h1></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Doctor</title>
+    <link rel="stylesheet" href = "{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home"> <img src ="{% static 'images/rivers_20241124_193633_0000.png'%}"> </a>
+                Hello Doctor
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="/sl/s/">Service</a></li>
+                <li><a href="#contact">Contact</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="{% url 'profile' %}">Profile</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'register' %}">Sign Up</a></li>
+                {% endif %}
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="hero" id="home">
+        <div class="hero-content" style="margin-top: 20px;">
+            <h1>Welcome To Hello-Doctor</h1>
+            <br/>
+            <div style="background-color: black; color: rgb(255, 255, 255); padding: 10px; margin-bottom: 30px; border-radius: 20px; font-weight: bold;">
+                <marquee><p>HelloDoctor is your one stop healtcare AI assistant.We are here for to reduce the probability of your madical negligence</p></marquee>
+            </div>
+            <div class="card-container">
+                <div class="card"><img src = "{% static 'images/mri.jpg' %}" /></div>
+                <div class="card"><img src = "{% static 'images/xray.jpg' %}" /></div>
+                <div class="card"><img src = "{% static 'images/ecg.jpg' %}" /></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="background2">
+            <div class="overlay">
+                <h1 class="title">About Us</h1>
+                <p class="about-p">We are a team of dedicated professionals committed to revolutionizing the health sector through innovative solutions. With expertise in artificial intelligence, software development, and user-centric design.</p><br>
+                <div class="card2-container">
+                    <!-- 2 1 -->
+                    <div class="card2">
+                        <img src = "{% static 'images/sifat.jpg' %}" />
+                        <h3>MD Sifat Hossain</h3>
+                        <p>Artificial intelligence Engineer</p>
+                    </div>
+                    <!-- Card2 2 -->
+                    <div class="card2">
+                        <img src = "{% static 'images/tusher.jpg' %}" />
+                        <h3>Tanjirul Tusher</h3>
+                        <p>Backend Developer</p>
+                    </div>
+                    <!-- Card2 3 -->
+                    <div class="card2">
+                        <img src = "{% static 'images/junaed.jpg' %}" />
+                        <h3>Junaedul Islam Khan</h3>
+                        <p>Frontend Developer</p>
+                    </div>
+                    <!-- Card2 4 -->
+                    <div class="card2">
+                        <img src = "{% static 'images/anamul.jpg' %}" />
+                        <h3>Anamul Islam</h3>
+                        <p>UI UX Designer</p>
+                    </div>
+                    <!-- Card2 5 -->
+                    <div class="card2">
+                        <img src = "{% static 'images/rafi.jpg' %}" />
+                        <h3>Rainul Hossain</h3>
+                        <p>Tester and Project manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-form">
+            <div class="bg">
+                <h2>Contact Us</h2>
+                <form>
+                    <label for="name"></label>
+                    <input type="text" id="name" class="input" name="name" placeholder="Your Name" required>
+
+                    <label for="email"></label>
+                    <input type="email" id="email" class="input" name="email" placeholder="Your Email" required>
+
+                    <label for="message"></label>
+                    <textarea id="message" class="input" name="message" placeholder="Write your message here..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/junaedul.islamkhan" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/_harry_potter_lite/" class="fa fa-instagram"></a>
+            <a href="https://www.linkedin.com/in/md-junaedul-islam-khan/" class="fa fa-linkedin"></a>
+        </div>
+        <p>&copy; 2024 by HelloIT. All Rights Reserved.</p>
+    </footer>
+</body>
+
+</html>

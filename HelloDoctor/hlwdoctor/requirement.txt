@@ -1,0 +1,12 @@
+django
+nibabel
+tensorflow
+keras
+os
+tempfile
+reportlab
+sklearn
+numpy
+scipy
+base64
+matplotlib

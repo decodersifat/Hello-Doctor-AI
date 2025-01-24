@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href = "{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/home/h/#home"> <img src ="{% static 'images/rivers_20241124_193633_0000.png'%}"> </a>
+            Hello Doctor
+        </div>
+        <ul class="nav-links">
+            <li><a href="/home/h/#home">Home</a></li>
+            <li><a href="/home/h/#about">About</a></li>
+            <li><a href="/sl/s/">Service</a></li>
+            <li><a href="/home/h/#contact">Contact</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}">Profile</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %} 
+                <li><a href="{% url 'login' %}">Log In</a></li>
+                <li><a href="{% url 'register' %}">Sign Up</a></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+</header>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto p-6 flex justify-center items-center min-h-screen" style="margin-top: 80px;">
+        <div class="w-full max-w-lg bg-white shadow-lg rounded-lg border border-gray-200 p-8">
+            <!-- Header Section -->
+            <div class="text-center mb-8">
+            
+                <h2 class="text-2xl font-bold text-gray-900 mt-4">{{ user.username }}</h2>
+                <p class="text-gray-500">Welcome to your profile</p>
+            </div>
+            <!-- Profile Information -->
+            <div class="space-y-6">
+                <div>
+                    <p class="text-sm text-gray-500">First Name</p>
+                    <p class="text-lg font-medium text-gray-900">{{ user.first_name }}</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Last Name</p>
+                    <p class="text-lg font-medium text-gray-900">{{ user.last_name }}</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Email</p>
+                    <p class="text-lg font-medium text-gray-900">{{ user.email }}</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Age</p>
+                    <p class="text-lg font-medium text-gray-900">{{ profile.age }}</p>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500">Phone Number</p>
+                    <p class="text-lg font-medium text-gray-900">{{ profile.phone_number }}</p>
+                </div>
+                
+            </div>
+            <!-- Action Buttons -->
+            <div class="mt-8 flex justify-between">
+               
+                <a href="{% url 'logout' %}" class="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded-lg shadow hover:bg-red-600">
+                    Logout
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

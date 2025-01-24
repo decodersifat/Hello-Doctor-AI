@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 7px 20px;
+}
+
+.navbar .logo {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00d4ff;
+  /* Change color on hover */
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #00d4ff;
+  /* Add underline effect */
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.hero {
+  background: url('/static/images/4_20241124_184735_0003.jpg') no-repeat center center/cover;
+  color: black;
+  text-align: left;
+  margin-top: 50px;
+  padding: 50px;
+  height: 550px;
+}
+
+.hero-content {
+  max-width: 100%;
+  height: 75%;
+}
+
+.hero-p {
+  margin-bottom: 30px;
+  font-size: 25px;
+  width: 50%;
+}
+
+/*service*/
+.background {
+  background-image: url('/static/images/2_20241124_184735_0001.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.readmoreBTM {
+  background: linear-gradient(135deg, #87CEEB, #00BFFF);
+  /* Sky blue gradient */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  /* Fully rounded button */
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 191, 255, 0.4);
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 1px;
+}
+
+.readmoreBTM:hover {
+  background: linear-gradient(135deg, #00BFFF, #1E90FF);
+  /* Darker gradient on hover */
+  box-shadow: 0 12px 20px rgba(30, 144, 255, 0.6);
+  transform: translateY(-4px);
+  /* Hover lift effect */
+}
+
+.readmoreBTM:active {
+  background: linear-gradient(135deg, #00BFFF, #87CEEB);
+  /* Revert to original colors */
+  transform: translateY(2px);
+  /* SliBTMght push effect */
+  box-shadow: 0 4px 8px rgba(0, 191, 255, 0.4);
+}
+
+.readmoreBTM:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.8);
+  /* Glow effect on focus */
+}
+
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Semi-transparent overlay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+}
+
+.about-p {
+  color: #fff;
+  padding: 15px 70px;
+}
+
+.card1-container {
+  display: flex;
+  gap: 20px;
+}
+
+.card1 {
+  width: 400px;
+  height: 250px;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: larger;
+  font-weight: 500;
+}
+
+/*about*/
+.background2 {
+  background-image: url('/static/images/1_20241124_184735_0000.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  /* Full height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  width: 400px;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+}
+
+.card img {
+  width: 90%;
+  border-radius: 2.5%;
+  opacity: .8;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark semi-transparent overlay */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.title {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.card2-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card2 {
+  width: 200px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  /* Translucent background */
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  /* Glassmorphism effect */
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card2:hover {
+  transform: translateY(-10px);
+}
+
+.card2 img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.card2 h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.card2 p {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card2-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.contact-form {
+  width: 100%;
+  text-align: center;
+  background-color: #d0caca;
+  padding: 80px 200px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  box-shadow: 3px 3px 30px #000000c3;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 5px 5px 40px #020aa5d3;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+
+.footer {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.fa {
+  margin: 16px;
+  text-decoration: none;
+}
+
+.fa-facebook {
+  color: #0059ff;
+}
+
+.fa-instagram {
+  color: #ff0000;
+}
+
+.fa-linkedin {
+  color: #0059ff;
+}
